@@ -143,55 +143,19 @@ var xoxo = {
 		var compMove = null;
 		var gSq = this.gameSquence;
 		for (var i = 0; i < gSq.length/3; i++) {
-			if (gSq[i*3] == xoxo.userChoice && gSq[(i*3) + 2] == null && gSq[i*3] === gSq[(i*3)+1]) {
-				console.log("happended at " + ((i*3) + 2));
-				compMove = (i*3) + 2;
-			}
-			if (gSq[(i*3)+1] == xoxo.userChoice && gSq[i*3] == null && gSq[(i*3)+1] === gSq[(i*3)+2]) {
-				console.log("happended at " + (i*3));
-				compMove = i*3;
-			}
-			if (gSq[i*3] == xoxo.userChoice && gSq[(i*3) + 1] == null && gSq[i*3] === gSq[(i*3)+2]) {
-				console.log("happended at " + ((i*3) + 1));
-				compMove = (i*3) + 1;
-			}
-			if (gSq[i] == xoxo.userChoice && gSq[i+6] == null && gSq[i] === gSq[i+3]) {
-				console.log("happended at " + (i+6));
-				compMove = i+6;
-			}
-			if (gSq[i+3] == xoxo.userChoice && gSq[i] == null && gSq[i+3] === gSq[i+6]) {
-				console.log("happended at " + (i));
-				compMove = i;
-			}
-			if (gSq[i] == xoxo.userChoice && gSq[i+3] == null && gSq[i] === gSq[i+6]) {
-				console.log("happended at " + (i+3));
-				compMove = i+3;
-			}
+			if (gSq[i*3] == xoxo.userChoice && gSq[(i*3) + 2] == null && gSq[i*3] === gSq[(i*3)+1])   {compMove = (i*3) + 2;}
+			if (gSq[(i*3)+1] == xoxo.userChoice && gSq[i*3] == null && gSq[(i*3)+1] === gSq[(i*3)+2]) {compMove = i*3;}
+			if (gSq[i*3] == xoxo.userChoice && gSq[(i*3) + 1] == null && gSq[i*3] === gSq[(i*3)+2])   {compMove = (i*3) + 1;}
+			if (gSq[i] == xoxo.userChoice && gSq[i+6] == null && gSq[i] === gSq[i+3])                 {compMove = i+6;}
+			if (gSq[i+3] == xoxo.userChoice && gSq[i] == null && gSq[i+3] === gSq[i+6])               {compMove = i;}
+			if (gSq[i] == xoxo.userChoice && gSq[i+3] == null && gSq[i] === gSq[i+6])                 {compMove = i+3;}
 		}
-		if (gSq[0] == xoxo.userChoice && gSq[8] == null && gSq[0] === gSq[4]) {
-			console.log("happended at " + (8));
-			compMove = 8;
-		}
-		if (gSq[4] == xoxo.userChoice && gSq[0] == null && gSq[4] === gSq[8]) {
-			console.log("happended at " + (0));
-			compMove = 0;
-		}
-		if (gSq[0] == xoxo.userChoice && gSq[4] == null && gSq[0] === gSq[8]) {
-			console.log("happended at " + (4));
-			compMove = 4;
-		}
-		if (gSq[2] == xoxo.userChoice && gSq[6] == null && gSq[2] === gSq[4]) {
-			console.log("happended at " + (6));
-			compMove = 6;
-		}
-		if (gSq[4] == xoxo.userChoice && gSq[2] == null && gSq[4] === gSq[6]) {
-			console.log("happended at " + (2));
-			compMove = 2;
-		}
-		if (gSq[2] == xoxo.userChoice && gSq[4] == null && gSq[2] === gSq[6]) {
-			console.log("happended at " + (4));
-			compMove = 4;
-		}
+		if (gSq[0] == xoxo.userChoice && gSq[8] == null && gSq[0] === gSq[4]) {compMove = 8;}
+		if (gSq[4] == xoxo.userChoice && gSq[0] == null && gSq[4] === gSq[8]) {compMove = 0;}
+		if (gSq[0] == xoxo.userChoice && gSq[4] == null && gSq[0] === gSq[8]) {compMove = 4;}
+		if (gSq[2] == xoxo.userChoice && gSq[6] == null && gSq[2] === gSq[4]) {compMove = 6;}
+		if (gSq[4] == xoxo.userChoice && gSq[2] == null && gSq[4] === gSq[6]) {compMove = 2;}
+		if (gSq[2] == xoxo.userChoice && gSq[4] == null && gSq[2] === gSq[6]) {compMove = 4;}
 		if (compMove == null || gSq[compMove] != null) {
 			compMove = Math.floor(Math.random() * 9);
 			// Check if a symbol already exists
